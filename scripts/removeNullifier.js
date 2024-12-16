@@ -15,9 +15,7 @@ async function main() {
 
   const accessContract = new ethers.Contract(accessAddress, accessAbi, account);
 
-  const removeNullifierTx = await accessContract.removeNullifier(
-    "0x20878742a916d466c258db1a748f658136a31b21d2a77a2d91f26d7a0b9faea7"
-  );
+  const removeNullifierTx = await accessContract.removeNullifier();
 
   console.log("Tx:", removeNullifierTx.hash);
 

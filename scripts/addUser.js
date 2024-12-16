@@ -15,10 +15,7 @@ async function main() {
 
   const accessContract = new ethers.Contract(accessAddress, accessAbi, account);
 
-  const addUser = await accessContract.addUser(
-    "0xb8DAF4394a82354b7771ad7235B0A7Eb5a87aCe3",
-    "0x1d0234186a679a88fd03a2f4d52059ef600584f42ee97e17b10972c197031ce8"
-  );
+  const addUser = await accessContract.addUser("", "");
 
   console.log("Tx:", addUser.hash);
 
