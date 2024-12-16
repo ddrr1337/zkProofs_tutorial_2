@@ -20,7 +20,7 @@ async function main() {
   console.log("Tx:", addUser.hash);
 
   console.log(
-    "-------------------- VERIFICATION COMPLETED -----------------------"
+    "-------------------- ADD USER COMPLETED -----------------------"
   );
 }
 
