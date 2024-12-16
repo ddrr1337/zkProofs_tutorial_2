@@ -1,13 +1,13 @@
 pragma circom 2.1.6;
 
-//include "circomlib/poseidon.circom";
+
 include "../node_modules/circomlib/circuits/poseidon.circom";
 
 template Example () {
     signal input address;   //public      
     signal input secret_private; //private        
     signal input hashTarget; //public
-    signal output nullifier; //output
+    //signal output nullifier; //output
 
     component hash = Poseidon(2);
     hash.inputs[0] <== address;
@@ -15,13 +15,14 @@ template Example () {
 
     signal hashOut;
     hashOut <== hash.out;
-    hashOut === hashTarget; 
+    hashOut  === hashTarget; 
 
-    component hashNullifier = Poseidon(2);
+
+    /* component hashNullifier = Poseidon(2);
     hashNullifier.inputs[0] <== secret_private;
     hashNullifier.inputs[1] <== hash.out;
     
-    nullifier <== hashNullifier.out;
+    nullifier <== hashNullifier.out; */
     
 }
 
