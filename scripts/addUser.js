@@ -19,6 +19,8 @@ async function main() {
 
   console.log("Tx:", addUser.hash);
 
+  await addUser.wait();
+
   console.log(
     "-------------------- ADD USER COMPLETED -----------------------"
   );

@@ -2,7 +2,6 @@ require("dotenv").config();
 const { networkConfig } = require("../helper-hardhat-config");
 const { network } = require("hardhat");
 const { verify } = require("../utils/verify");
-const { getAccount } = require("../utils/getAccount");
 const { getGasPrice } = require("../utils/getGasPrice");
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
