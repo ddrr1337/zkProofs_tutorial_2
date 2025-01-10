@@ -7,7 +7,7 @@ template Example () {
     signal input address;   //public      
     signal input secret_private; //private        
     signal input hashTarget; //public
-    //signal output nullifier; //output
+    signal output nullifier; //output
 
     component hash = Poseidon(2);
     hash.inputs[0] <== address;
@@ -18,11 +18,11 @@ template Example () {
     hashOut  === hashTarget; 
 
 
-    /* component hashNullifier = Poseidon(2);
+    component hashNullifier = Poseidon(2);
     hashNullifier.inputs[0] <== secret_private;
     hashNullifier.inputs[1] <== hash.out;
     
-    nullifier <== hashNullifier.out; */
+    nullifier <== hashNullifier.out;
     
 }
 
