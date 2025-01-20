@@ -19,6 +19,8 @@ async function main() {
 
   console.log("Tx:", verifyTx.hash);
 
+  await verifyTx.wait();
+
   console.log("ACCESS ADDRESS: ", accessAddress);
 
   console.log(
