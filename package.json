@@ -1,13 +1,10 @@
 {
-  "name": "remora_bot",
+  "name": "tutorial_zk",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "simulateBuyStock": "node ./functions/simulators/alpacaBuyStockSimulator.js",
-    "simulateSellStock": "node ./functions/simulators/alpacaSellStockSimulator.js",
-    "simulateBackendBuy": "node ./functions/simulators/backendBuySimulator.js",
-    "simulateBackendSell": "node ./functions/simulators/backendSellSimulator.js"
+
   },
   "devDependencies": {
     "@chainlink/contracts": "^1.1.1",
@@ -19,7 +16,6 @@
     "@openzeppelin/contracts": "^5.0.2",
     "circomlib": "^2.0.5",
     "circomlibjs": "^0.1.7",
-    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ethereum-waffle": "^3.0.0",
     "ethers": "5.7",
