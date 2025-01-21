@@ -1,11 +1,9 @@
 {
-  "name": "tutorial_zk",
+  "name": "base_hardhat",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts": {
-
-  },
+  "scripts": {},
   "devDependencies": {
     "@chainlink/contracts": "^1.1.1",
     "@chainlink/functions-toolkit": "^0.2.8",
