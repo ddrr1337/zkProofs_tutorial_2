@@ -6,7 +6,6 @@
   "scripts": {},
   "devDependencies": {
     "@chainlink/contracts": "^1.1.1",
-    "@chainlink/functions-toolkit": "^0.2.8",
     "@nomicfoundation/hardhat-ethers": "^3.0.2",
     "@nomicfoundation/hardhat-verify": "^2.0.9",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
