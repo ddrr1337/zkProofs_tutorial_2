@@ -1,11 +1,11 @@
 const { ethers, deployments, network } = require("hardhat");
 const { getAccount } = require("../utils/getAccount");
 const { getGasPrice } = require("../utils/getGasPrice");
+const { networkConfig } = require("../helper-hardhat-config");
 
 async function main() {
-  const provider = new ethers.providers.JsonRpcProvider(
-    process.env.ALCHEMY_RPC
-  );
+  const rpcUrl = network.config.url;
+  const provider = new ethers.providers.JsonRpcProvider(rpcUrl);
   const account = getAccount("main", provider);
   await getGasPrice();
 
@@ -13,17 +13,20 @@ async function main() {
   const accessAddress = accessDeployment.address;
   const accessAbi = accessDeployment.abi;
 
+  console.log("contract at:", accessAddress);
+
   const accessContract = new ethers.Contract(accessAddress, accessAbi, account);
 
-  const addUser = await accessContract.addUser("", "");
+  const commitment =
+    "0x2b4cf9f60cbafeb8935c43013868c5cef2b6134cf1af5915dc688af0d79044a4";
 
-  console.log("Tx:", addUser.hash);
+  const commitment1 =
+    "0x06179c55ad384fd94ac4a139293969590cee1290298bda3c4e4dd7c6931b556b";
 
-  await addUser.wait();
+  const depositTx = await accessContract.deposit(commitment);
 
-  console.log(
-    "-------------------- ADD USER COMPLETED -----------------------"
-  );
+  console.log("TX:", depositTx.hash);
+  await depositTx.wait();
 }
 
 main()

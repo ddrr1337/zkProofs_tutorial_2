@@ -14,10 +14,15 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
   await getGasPrice();
 
-  const verifyDeployment = await deployments.get("Groth16Verifier");
-  const vierifierAddress = verifyDeployment.address;
+  const hasherDeployment = await deployments.get("Hasher");
+  const hasherAddress = hasherDeployment.address;
 
-  const constructorArgs = [vierifierAddress];
+  const verifierDeployment = await deployments.get("Groth16Verifier");
+  const verifierAddress = verifierDeployment.address;
+
+  const constructorArgs = [30, hasherAddress, verifierAddress];
+
+  console.log("Constructor Args: ", constructorArgs);
 
   const accessDeploy = await deploy("Access", {
     from: deployer,
@@ -28,7 +33,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   });
 
   console.log(
-    "----------------------- ZK ACCESS DEPLOYED --------------------------"
+    "----------------------- ACCESS DEPLOYED --------------------------"
   );
 
   const verifyContract = networkConfig[chainId].verify;
