@@ -27,10 +27,7 @@ async function main() {
     account
   );
 
-  const generateHash = await testTreeContract.hashLeftRight(
-    "0x00000000000000000000000026baac08cb753303de111e904e19baf91e6b5e4d",
-    "0x0000000000000000000000000000000000000000000000000000000000000309"
-  );
+  const generateHash = await testTreeContract.hashLeftRight("", "");
   console.log("MimicSponge Hash (uint256): ", generateHash.toString());
 
   console.log("MIMICSPONGE CONTRACT AT: ", testTreeAddress);

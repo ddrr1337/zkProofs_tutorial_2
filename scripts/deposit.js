@@ -17,11 +17,7 @@ async function main() {
 
   const accessContract = new ethers.Contract(accessAddress, accessAbi, account);
 
-  const commitment =
-    "0x2b4cf9f60cbafeb8935c43013868c5cef2b6134cf1af5915dc688af0d79044a4";
-
-  const commitment1 =
-    "0x06179c55ad384fd94ac4a139293969590cee1290298bda3c4e4dd7c6931b556b";
+  const commitment = "";
 
   const depositTx = await accessContract.deposit(commitment);
 
