@@ -17,10 +17,10 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   const hasherDeployment = await deployments.get("Hasher");
   const hasherAddress = hasherDeployment.address;
 
-  const verifierDeployment = await deployments.get("Groth16Verifier");
-  const verifierAddress = verifierDeployment.address;
+  /*   const verifierDeployment = await deployments.get("Groth16Verifier");
+  const verifierAddress = verifierDeployment.address; */
 
-  const constructorArgs = [30, hasherAddress, verifierAddress];
+  const constructorArgs = [30, hasherAddress];
 
   console.log("Constructor Args: ", constructorArgs);
 

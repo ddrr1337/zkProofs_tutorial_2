@@ -17,20 +17,27 @@ async function main() {
   const account = getAccount("main", provider);
   await getGasPrice();
 
-  const testTreeDeployment = await deployments.get("MerkleTreeWithHistory");
-  const testTreeAddress = testTreeDeployment.address;
-  const testTreeAbi = testTreeDeployment.abi;
+  const accessDeployment = await deployments.get("Access");
+  const accessAddress = accessDeployment.address;
+  const accessAbi = accessDeployment.abi;
 
   const testTreeContract = new ethers.Contract(
-    testTreeAddress,
-    testTreeAbi,
+    accessAddress,
+    accessAbi,
     account
   );
 
-  const generateHash = await testTreeContract.hashLeftRight("", "");
+  const hasherDeployment = await deployments.get("Hasher");
+  const hasherAddress = hasherDeployment.address;
+
+  const generateHash = await testTreeContract.hashLeftRight(
+    hasherAddress,
+    "",
+    ""
+  );
   console.log("MimicSponge Hash (uint256): ", generateHash.toString());
 
-  console.log("MIMICSPONGE CONTRACT AT: ", testTreeAddress);
+  console.log("MIMICSPONGE CONTRACT AT: ", accessAddress);
 }
 
 main()

@@ -88,9 +88,9 @@ async function main() {
     hashFunction: mimcHash,
   });
 
-  const commitpentToProof = "";
+  const commitmentToProve = "";
 
-  const path = tree.proof(commitpentToProof);
+  const path = tree.proof(commitmentToProve);
 
   const slices = tree.getTreeSlices(trees.PARTS_COUNT);
 
