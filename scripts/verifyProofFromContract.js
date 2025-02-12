@@ -24,7 +24,7 @@ async function main() {
   console.log("ACCESS ADDRESS: ", accessAddress);
 
   console.log(
-    "-------------------- VERIFICATION COMPLETED -----------------------"
+    "-------------------- TEST ACCESS TX COMPLETED -----------------------"
   );
 }
 

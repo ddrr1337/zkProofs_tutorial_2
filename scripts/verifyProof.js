@@ -25,7 +25,7 @@ async function main() {
   console.log("VERIFICATION ADDRESS: ", verifierAddress);
 
   console.log(
-    "-------------------- VERIFICATION COMPLETED -----------------------"
+    "-------------------- PROOF VERIFICATION COMPLETED -----------------------"
   );
 }
 
